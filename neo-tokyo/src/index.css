@@ -1,0 +1,21 @@
+body{
+  background-color: black;
+  color: aliceblue;
+}
+
+.mangaContainer{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mangaList{
+  width: 300px;
+   height: 300px;
+   border: 1px solid white;
+   margin: 10px;
+}
+
+img{
+  width: 150px;
+  height: 150px;
+}
