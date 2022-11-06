@@ -14,9 +14,11 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
         }),
         endpoints: (builder) => ({
             getPopular: builder.query({ query: () => '/popular' }),
+            getLatest: builder.query({ query: () => '/latest' }),
         }),
     });
     
     export const {
         useGetPopularQuery,
+        useGetLatestQuery,
     } = apiCore;

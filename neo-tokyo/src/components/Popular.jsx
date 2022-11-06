@@ -10,14 +10,20 @@ const Popular = () => {
 
   console.log(data);
   return (
+    <>
     <div className='mangaContainer'>
+      <h3 className='mangaContainer-title'>Popular Mangas</h3>
     {data?.data?.slice(0,5).map((manga, i)=> (
-        <div key={manga.id} className="mangaList">
-        <p>{manga.title}</p>
+      <div key={manga.id} className='manga'>
+        <div className="mangaList">
         <img src={manga.thumbnail_url} alt="" />
         </div>
+         <p className='manga-title' >{manga.title}</p>
+         </div>
     ))}
     </div>
+     <a className='link' href="#">See more</a>
+    </>
   )
 }
 
