@@ -1,7 +1,7 @@
 import React from 'react'
 import { useGetPopularQuery } from '../redux/apiCore'
 
-const Popular = () => {
+const PopularPage = () => {
   const {data, isFetching, error } = useGetPopularQuery();
 
   if (isFetching) return "Loading songs...";
@@ -12,8 +12,8 @@ const Popular = () => {
   return (
     <>
     <div className='mangaContainer'>
-      <h3 className='mangaContainer-title'>Discover</h3>
-    {data?.data?.slice(0,9).map((manga, i)=> (
+      <h3 className='popularContainer-title'>Most Popular</h3>
+    {data?.data?.map((manga, i)=> (
       <div key={manga.id} className='manga'>
         <div className="mangaList">
         <img src={manga.thumbnail_url} alt="" />
@@ -24,10 +24,9 @@ const Popular = () => {
          </div>
          
     ))}
-      <a className='link' href="#">See more</a>
     </div>
     </>
   )
 }
 
-export default Popular
+export default PopularPage

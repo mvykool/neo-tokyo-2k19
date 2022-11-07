@@ -6,11 +6,9 @@ import Popular from './Popular'
 const Home = () => {
   return (
     <div>
-        <NavBar/>
-        <div className='show-case'>  
+       <div className='show-case'>  
           <Latest/>
           </div>
-       
         <Popular/>
     </div>
   )
