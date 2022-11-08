@@ -6,7 +6,7 @@ import { useGetSearchQuery } from '../redux/apiCore'
 const SearchPage = () => {
 
 const { searchTerm } = useParams();
-const { data, isFetching, error } = useGetSearchQuery(searchTerm);
+const { data, isFetching, error } = useGetSearchQuery(searchTerm.replaceAll(' ', '_'));
 
 
 if(isFetching) return <p>loading</p>;
@@ -30,6 +30,7 @@ console.log(data)
         <p className='chapter'>Latest Chapter: <span>{manga.latest_chapter}</span></p>
          </div>
       ) )}
+       <small className='no-more-results'>No more results</small>
     </div>
   )
 }

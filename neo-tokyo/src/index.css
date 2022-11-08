@@ -41,6 +41,7 @@ body{
   padding:4px;
   cursor: pointer;
   border-radius: 4%;
+  color: var(--text);
   background-color: var(--primary-dark);
 }
 
@@ -278,4 +279,11 @@ body{
   margin-top: 28%;
   margin-left: 10%;
   margin-bottom: 10%;
+}
+
+.no-more-results{
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  margin: 5%;
 }

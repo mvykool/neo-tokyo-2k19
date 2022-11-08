@@ -15,8 +15,8 @@ function App() {
        <NavBar/>
        <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="popular" element={<PopularPage/>}/>
-        <Route path="latest" element={<LatestPage/>}/>
+        <Route path="/popular" element={<PopularPage/>}/>
+        <Route path="/latest" element={<LatestPage/>}/>
         <Route path="/search/:searchTerm" element={<SearchPage/>}/>
        </Routes>
     </div>

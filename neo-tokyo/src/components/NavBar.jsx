@@ -3,6 +3,7 @@ import {GiHamburgerMenu} from 'react-icons/gi'
 import { IoCloseSharp } from 'react-icons/io5'
 import {RiSearch2Line} from 'react-icons/ri'
 import Search from './Search'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
 
@@ -41,7 +42,7 @@ if(showMenu){
 
   return (
     <nav className='nav-bar'>
-      <div className='logo'>Neo-Tokyo</div>
+      <div ><Link to="/" className='logo'>Neo-Tokyo</Link></div>
       <Search/>
       <RiSearch2Line className='search-icon'/>
        <GiHamburgerMenu className='mobile-menu' onClick={()=> setShowMenu(!showMenu)}/>
@@ -49,9 +50,9 @@ if(showMenu){
        
          <ul className='mobile-menu-list' ref={ref}>
          <IoCloseSharp className='close-icon' onClick={()=> setShowMenu(!showMenu)}/>
-         <li><a href="">Home</a></li>
+         <li><Link to="/">Home</Link></li>
          <li><a href="">Categories</a></li>
-         <li><a href="">Popular</a></li>
+         <li><Link to="/popular">Popular</Link></li>
        </ul> : false
        }
     </nav>

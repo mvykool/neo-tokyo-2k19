@@ -7,6 +7,8 @@ const Search = () => {
 
   const handleSubmit = (e) => {
 	 e.preventDefault();
+  setSearchTerm(" ")
+
 
 	 navigate(`/search/${searchTerm}`);
   };
@@ -14,9 +16,7 @@ const Search = () => {
   return (
     <form onSubmit={handleSubmit} autoComplete="off" >
       <label htmlFor="search-field" className="sr-only"></label>
-      <div
-        className=""
-      >
+      <div>
         <input
           name="search-field"
           autoComplete="off"

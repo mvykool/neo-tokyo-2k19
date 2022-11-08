@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { useGetPopularQuery } from '../redux/apiCore'
 
 const Popular = () => {
@@ -24,7 +25,7 @@ const Popular = () => {
          </div>
          
     ))}
-      <a className='link' href="#">See more</a>
+      <Link className='link' to="/popular">See more</Link>
     </div>
     </>
   )
