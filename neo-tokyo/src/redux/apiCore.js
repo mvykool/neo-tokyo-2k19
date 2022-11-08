@@ -15,7 +15,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
         endpoints: (builder) => ({
             getPopular: builder.query({ query: () => '/popular' }),
             getLatest: builder.query({ query: () => '/latest' }),
-            getSearchQuery:builder.query({ query: (searchTerm, page = 1) => `/search?keyword=${searchTerm}&page=${page}`}),
+            getSearch: builder.query({ query: (searchTerm, page = 1) => `/search?keyword=${searchTerm}&page=${page}`})
         }),
     });
     

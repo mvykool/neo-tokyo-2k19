@@ -7,7 +7,7 @@ const Latest = () => {
 
     if (isFetching) return "Loading songs...";
   
-    if (error) return "Error";
+    if (error) return <p className='error-msj'>Error 500, Issue loading latest mangas</p>;
   
     console.log(data);
 

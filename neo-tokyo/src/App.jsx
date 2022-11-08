@@ -17,8 +17,7 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="popular" element={<PopularPage/>}/>
         <Route path="latest" element={<LatestPage/>}/>
-        <Route path="/search" element={<SearchPage/>}/>
-        <Route path="*" element={<Error404/>} />
+        <Route path="/search/:searchTerm" element={<SearchPage/>}/>
        </Routes>
     </div>
   )
