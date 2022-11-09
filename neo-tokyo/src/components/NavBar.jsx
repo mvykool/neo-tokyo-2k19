@@ -51,7 +51,7 @@ if(showMenu){
          <ul className='mobile-menu-list' ref={ref}>
          <IoCloseSharp className='close-icon' onClick={()=> setShowMenu(!showMenu)}/>
          <li><Link to="/">Home</Link></li>
-         <li><a href="">Categories</a></li>
+         <li><Link to="/latest">Latest</Link></li>
          <li><Link to="/popular">Popular</Link></li>
        </ul> : false
        }

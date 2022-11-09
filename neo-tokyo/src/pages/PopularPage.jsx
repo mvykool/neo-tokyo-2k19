@@ -24,6 +24,7 @@ const PopularPage = () => {
          </div>
          
     ))}
+     <small className='no-more-results'>No more results</small>
     </div>
     </>
   )

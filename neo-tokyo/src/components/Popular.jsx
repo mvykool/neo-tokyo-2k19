@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { useGetPopularQuery } from '../redux/apiCore'
+import Genres from '../pages/Genres';
 
 const Popular = () => {
   const {data, isFetching, error } = useGetPopularQuery();
@@ -13,6 +14,7 @@ const Popular = () => {
   return (
     <>
     <div className='mangaContainer'>
+      <Genres/>
       <h3 className='mangaContainer-title'>Discover</h3>
     {data?.data?.slice(0,9).map((manga, i)=> (
       <div key={manga.id} className='manga'>

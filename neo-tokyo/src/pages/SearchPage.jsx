@@ -13,7 +13,6 @@ if(isFetching) return <p>loading</p>;
 
 if(error) return <p>error</p>;
 
-console.log(searchTerm)
 
 console.log(data)
 
