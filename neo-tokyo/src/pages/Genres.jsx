@@ -1,15 +1,26 @@
-import React, { useState} from 'react'
+import React, { useState, useEffect} from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useGetGenreQuery } from '../redux/apiCore'
+import { useGetGenreQuery } from '../redux/apiCore';
+import { selectGenreListId } from '../redux/genreSlice';
 
 const Genres = () => {
-    
+
+    const dispatch = useDispatch();
+    const genreListId = useSelector((state) => state.genre);
+    /**using discpatch */
     const navigate = useNavigate();
    /**create state to get genreid */
-   const [ getGenre, setGetGenre ] = useState('');
 
 
-    const {data, isFetching, error } = useGetGenreQuery();
+
+    /**use effect */
+
+    
+    /**bringing  function from redux */
+
+
+    const {data, isFetching, error } = useGetGenreQuery(genreListId || "all");
 
 
     if (isFetching) return "Loading songs...";
@@ -18,26 +29,29 @@ const Genres = () => {
   
     console.log(data);
 
+    /**fire dispatch */
 
 
-    const handleClick = (e) => {
-        e.preventDefault();
+    const dispatchUsed = (e) =>{
+        dispatch(selectGenreListId(e.target.value))
+        let genreWord = e.target.value;
+        navigate(`/genre/${genreWord}`);
+    }
+
+
+
    
-        navigate(`/genre/${getGenre}`);
-     }; 
-
 
   return (
     <div className='select'>
         <select 
         name="genre"
-        id='genre'
-        value={getGenre}
+        value={genreListId || "all"}
         className='list'
-        onChange={(e) => setGetGenre(e.target.value)}
+        onChange={(e) => dispatchUsed(e)}
         >
             {data?.data?.map((genre)=> (
-                <option className='option' key={genre.title} onClick={handleClick} value={genre.title}>{genre.title}</option>
+                <option className='option' key={genre.title} value={genre.title}>{genre.title}</option>
             ))}
         </select>
     </div>

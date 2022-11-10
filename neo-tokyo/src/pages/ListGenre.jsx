@@ -6,8 +6,8 @@ import { useGetListGenreQuery} from '../redux/apiCore'
 const ListGenre = () => {
     
 
-    const { getGenre } = useParams();
-    const { data, isFetching, error} = useGetListGenreQuery(getGenre);
+    const { genreWord } = useParams();
+    const { data, isFetching, error} = useGetListGenreQuery(genreWord);
 
     if(isFetching) return <p>loading</p>;
 
@@ -20,7 +20,7 @@ const ListGenre = () => {
 
   return (
     <div>
-      <h3 className='genre-title'>{getGenre}:</h3>
+      <h3 className='genre-title'>{genreWord}:</h3>
         {data?.data?.map((manga, i)=> (
       <div key={manga.id} className='manga'>
         <div className="mangaList">
