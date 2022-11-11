@@ -301,7 +301,7 @@ body{
   margin-left: 10%;
 }
 
-select {
+/*select {
   -webkit-appearance:none;
   -moz-appearance:none;
   -ms-appearance:none;
@@ -323,6 +323,7 @@ select::-ms-expand {
 .select {
   position: absolute;
   margin-top: -10%;
+
   display: flex;
   width: 15em;
   height: 3em;
@@ -345,3 +346,4 @@ select::-ms-expand {
 .select:hover::after {
   color: var(--primary);
 }
+*/

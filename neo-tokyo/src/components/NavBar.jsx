@@ -7,25 +7,6 @@ import { Link } from 'react-router-dom'
 
 const NavBar = () => {
 
-/**mobile menu */
-
-useEffect(()=> {
- 
-  document.addEventListener("click", closeMenu, true)
-  return () => {
-    document.removeEventListener('click', closeMenu);
-  }
-}, [])
-
-const ref = useRef();
-
-const closeMenu = (e) => {
-
-  if(!ref.current.contains(e.target)){
-    setShowMenu(false)
-   
-  }
-}
 
 const [showMenu, setShowMenu] = useState(false);
 
@@ -48,7 +29,7 @@ if(showMenu){
        <GiHamburgerMenu className='mobile-menu' onClick={()=> setShowMenu(!showMenu)}/>
       { menu ? 
        
-         <ul className='mobile-menu-list' ref={ref}>
+         <ul className='mobile-menu-list'>
          <IoCloseSharp className='close-icon' onClick={()=> setShowMenu(!showMenu)}/>
          <li><Link to="/">Home</Link></li>
          <li><Link to="/latest">Latest</Link></li>
