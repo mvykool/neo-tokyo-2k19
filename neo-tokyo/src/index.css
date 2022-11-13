@@ -306,6 +306,7 @@ body{
   -moz-appearance:none;
   -ms-appearance:none;
   appearance:none;
+  z-index: 500;
   outline:0;
   box-shadow:none;
   border:0!important;
@@ -346,4 +347,3 @@ select::-ms-expand {
 .select:hover::after {
   color: var(--primary);
 }
-*/

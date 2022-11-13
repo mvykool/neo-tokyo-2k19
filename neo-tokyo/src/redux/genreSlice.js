@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    genreListId: ''
+    genreListId: '',
 };
 
 const genreSlice = createSlice({

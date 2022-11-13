@@ -2,19 +2,16 @@ export const genres = [
     {
         title: "All",  value: "all" },
       {
-        title: "Action", value: "action"
+        title: "Action", value: "2"
       },
       {
-        title: "Adult", value: "adult"
+        title: "Adventure", value: "4"
       },
       {
-        title: "Adventure", value: "adventure"
+        title: "Comedy", value: "6"
       },
       {
-        title: "Comedy", value: "comedy"
-      },
-      {
-        title: "Cooking", value: "cooking"
+        title: "Cooking", value: "7"
       },
   ];
   

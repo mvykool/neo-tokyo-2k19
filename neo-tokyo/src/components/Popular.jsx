@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 import { useGetListGenreQuery } from '../redux/apiCore';
 import { selectGenreListId } from '../redux/genreSlice';
 import { genres } from '../redux/constants'
@@ -12,23 +12,20 @@ const Popular = () => {
 
 /**genres */
 
-const dispatch = useDispatch();
-const genreListId = useSelector((state) => state.genre);
+const genreListId  = useSelector((state) => state.genre);
 
-
-const {data, isFetching, error } = useGetListGenreQuery();
+const [getGenre, setGetGenre] = useState("")
+const {data, isFetching, error } = useGetListGenreQuery(getGenre);
 
 
 if (isFetching) return "Loading songs...";
 
 if (error) return "Error";
 
-console.log(data);
-
 
 const genreTitle = genres.find(({ value }) => value === genreListId)?.title;
 
-console.log(genreListId)
+
 
   return (
     <>
@@ -36,9 +33,9 @@ console.log(genreListId)
 
     <div className='select'>
         <select 
-        value={genreListId || "all"}
+        value={"all"}
         className='list'
-        onChange={(e) => dispatch(selectGenreListId(e.target.value))}
+        onChange={(e) => setGetGenre(e.target.value)}
         >
             {genres?.map((genre)=> (
                 <option className='option' key={genre.value} value={genre.value}>{genre.title}</option>
