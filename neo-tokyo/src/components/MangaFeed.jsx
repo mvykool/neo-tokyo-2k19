@@ -12,14 +12,16 @@ const [id, setId] = useState("")
 
 /**click to go to details */
 
-const handleClick = (e, id) => {
-  e.preventDefault();
-  navigate(`/details/manga-wl973694`);
+const handleClick = (id) => {
+ 
+  console.log(id)
+  setId(id)
+  navigate(`/details/${id}`)
 }
 
 
   return (
-    <div key={manga.id} className='manga' onClick={handleClick && setId(e.target.id)} >
+    <div key={manga.id} className='manga' onClick={() => handleClick(manga.id)} >
     <div className="mangaList">
     <img src={manga.thumbnail_url}  alt="" />
     </div>

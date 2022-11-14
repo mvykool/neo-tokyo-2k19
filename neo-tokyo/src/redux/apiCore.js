@@ -17,7 +17,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
             getLatest: builder.query({ query: () => '/latest' }),
             getSearch: builder.query({ query: (searchTerm, page = 1) => `/search?keyword=${searchTerm}&page=${page}`}),
             getListGenre: builder.query( { query: (getGenre)=> `/browse?type=latest&state=all&category=${getGenre}&page=1`}),
-            getDetails: builder.query( { query: (id) => `/details?id=manga-wl973694` }),
+            getDetails: builder.query( { query: (id) => `/details?id=${id}` }),
         }),
     });
     
