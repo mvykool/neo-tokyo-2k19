@@ -6,6 +6,7 @@ import PopularPage from "./pages/PopularPage"
 import LatestPage from "./pages/LatestPage"
 import SearchPage from "./pages/SearchPage"
 import Details from "./pages/Details"
+import Chapter from "./pages/Chapter"
 
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/latest" element={<LatestPage/>}/>
         <Route path="/search/:searchTerm" element={<SearchPage/>}/>
         <Route path="/details/:id" element={<Details/>}/>
+        <Route path="/:chapterId" element={<Chapter/>}/>
        </Routes>
     </div>
   )
