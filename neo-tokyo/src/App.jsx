@@ -5,6 +5,7 @@ import { Routes, Route} from 'react-router-dom'
 import PopularPage from "./pages/PopularPage"
 import LatestPage from "./pages/LatestPage"
 import SearchPage from "./pages/SearchPage"
+import Details from "./pages/Details"
 
 
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/popular" element={<PopularPage/>}/>
         <Route path="/latest" element={<LatestPage/>}/>
         <Route path="/search/:searchTerm" element={<SearchPage/>}/>
+        <Route path="/details/:id" element={<Details/>}/>
        </Routes>
     </div>
   )

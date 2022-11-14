@@ -1,6 +1,4 @@
 export const genres = [
-    {
-        title: "All",  value: "all" },
       {
         title: "Action", value: "2"
       },

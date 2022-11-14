@@ -1,5 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import MangaFeed from '../components/MangaFeed'
 
 import { useGetSearchQuery } from '../redux/apiCore'
 
@@ -20,14 +21,12 @@ console.log(data)
     <div>
       <h1 className='search-title'>Results of: {searchTerm}</h1>
       { data?.data?.map((manga, i)=> (
-        <div key={manga.id} className='manga'>
-        <div className="mangaList">
-        <img src={manga.thumbnail_url} alt="" />
-        </div>
-        
-        <p className='manga-title' >{manga.title}</p>
-        <p className='chapter'>Latest Chapter: <span>{manga.latest_chapter}</span></p>
-         </div>
+       <MangaFeed
+       key={manga.id}
+       manga={manga}
+       data={data}
+       i={i}
+       />
       ) )}
        <small className='no-more-results'>No more results</small>
     </div>

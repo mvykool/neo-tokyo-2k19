@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import {  useSelector } from 'react-redux';
 import { useGetListGenreQuery } from '../redux/apiCore';
-import { selectGenreListId } from '../redux/genreSlice';
 import { genres } from '../redux/constants'
 import MangaFeed from './MangaFeed';
+
 
 
 const Popular = () => {
@@ -14,7 +14,7 @@ const Popular = () => {
 
 const genreListId  = useSelector((state) => state.genre);
 
-const [getGenre, setGetGenre] = useState("")
+const [getGenre, setGetGenre] = useState("2")
 const {data, isFetching, error } = useGetListGenreQuery(getGenre);
 
 
@@ -33,7 +33,7 @@ const genreTitle = genres.find(({ value }) => value === genreListId)?.title;
 
     <div className='select'>
         <select 
-        value={"all"}
+        value={"2"}
         className='list'
         onChange={(e) => setGetGenre(e.target.value)}
         >
