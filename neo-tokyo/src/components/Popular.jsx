@@ -14,7 +14,7 @@ const Popular = () => {
 
 const genreListId  = useSelector((state) => state.genre);
 
-const [getGenre, setGetGenre] = useState("2")
+const [getGenre, setGetGenre] = useState(genreListId || "all")
 const {data, isFetching, error } = useGetListGenreQuery(getGenre);
 
 
@@ -23,9 +23,9 @@ if (isFetching) return "Loading songs...";
 if (error) return "Error";
 
 
-const genreTitle = genres.find(({ value }) => value === genreListId)?.title;
+const genreTitle = genres.find(({ value }) => value === getGenre)?.title;
 
-
+console.log(genreListId)
 
   return (
     <>
@@ -33,7 +33,7 @@ const genreTitle = genres.find(({ value }) => value === genreListId)?.title;
 
     <div className='select'>
         <select 
-        value={"2"}
+        value={genreListId || "all"}
         className='list'
         onChange={(e) => setGetGenre(e.target.value)}
         >
@@ -46,9 +46,7 @@ const genreTitle = genres.find(({ value }) => value === genreListId)?.title;
     </div>
     <div className='mangaContainer'>
     <h3 className='mangaContainer-title'>{genreTitle}</h3>
-      </div>
- 
- <div> 
+    <div> 
     {data?.data?.slice(0,9).map((manga, i)=> (
       <MangaFeed
       key={manga.id}
@@ -60,6 +58,9 @@ const genreTitle = genres.find(({ value }) => value === genreListId)?.title;
     ))}
       <Link className='link' to="/popular">See more</Link>
     </div>
+      </div>
+ 
+
     </>
   )
 }

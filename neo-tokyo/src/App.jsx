@@ -22,7 +22,8 @@ function App() {
         <Route path="/latest" element={<LatestPage/>}/>
         <Route path="/search/:searchTerm" element={<SearchPage/>}/>
         <Route path="/details/:id" element={<Details/>}/>
-        <Route path="/:chapterId" element={<Chapter/>}/>
+        <Route path="/chapters" element={<Chapter/>}/>
+        <Route path="*" element={<Error404/>} />
        </Routes>
     </div>
   )

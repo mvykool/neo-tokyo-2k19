@@ -3,6 +3,10 @@ import { useParams } from 'react-router-dom'
 import { useGetDetailsQuery } from '../redux/apiCore'
 import { useNavigate } from 'react-router-dom';
 
+
+
+
+
 const Details = () => {
 
     const { id } = useParams();
@@ -11,18 +15,20 @@ const Details = () => {
 
     /**get chapter */
     
-    const [chapter, setChapter] = useState("");
+    
     const navigate = useNavigate();
+    const [chapter, setChapter] = useState("");
 
     const handleClick = (chapterId) => {
  
-       console.log(chapterId)
+      
         setChapter(chapterId)
-        navigate(`/${chapterId}`)
+        console.log(chapterId)
+        navigate(`/chapters`)
       }
 
 
-      console.log(data?.data)
+  console.log(data?.data)
 
   return (
     <div className='details' key={data?.data.title}>
@@ -36,7 +42,7 @@ const Details = () => {
       <p className='details-rating'> <span className='detail-span'>Rating: </span> {data?.data.rating}</p>
       <p className='details-view'> <span className='detail-span'>Views:</span> {data?.data.views_count}</p>
       <div className='details-genres'>{data?.data.genres.map((genre)=> (
-        <p className='genre'>{genre}</p>
+        <p className='genre' key={genre}>{genre}</p>
       ))}</div>
      </div>
     
@@ -46,7 +52,7 @@ const Details = () => {
       <h3 className='details-second-title'>Chapters</h3>
 
       <div className='chapter-container'>
-      {data?.data.chapters.map((chapter)=> (
+      {data?.data.chapters.map((chapter, i)=> (
         <div className='chapter-card' key={chapter.id} onClick={()=> handleClick(chapter.id)}>
            
             <p className='details-chapter'>{chapter.title}</p>
