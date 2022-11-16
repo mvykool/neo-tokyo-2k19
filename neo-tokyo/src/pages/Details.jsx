@@ -2,7 +2,7 @@ import React,{ useState} from 'react'
 import { useParams } from 'react-router-dom'
 import { useGetDetailsQuery } from '../redux/apiCore'
 import { useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -11,21 +11,6 @@ const Details = () => {
 
     const { id } = useParams();
     const { data, isFetching, error } = useGetDetailsQuery( id );
-
-
-    /**get chapter */
-    
-    
-    const navigate = useNavigate();
-    const [chapter, setChapter] = useState("");
-
-    const handleClick = (chapterId) => {
- 
-      
-        setChapter(chapterId)
-        console.log(chapterId)
-        navigate(`/chapters`)
-      }
 
 
   console.log(data?.data)
@@ -52,11 +37,11 @@ const Details = () => {
       <h3 className='details-second-title'>Chapters</h3>
 
       <div className='chapter-container'>
-      {data?.data.chapters.map((chapter, i)=> (
-        <div className='chapter-card' key={chapter.id} onClick={()=> handleClick(chapter.id)}>
-           
+      {data?.data.chapters.map((chapter)=> (
+        <div className='chapter-card' key={chapter.id}>
             <p className='details-chapter'>{chapter.title}</p>
             <p className='chapter-date'>Posted: {chapter.uploaded_at}</p>
+          <Link to={chapter.url} >Read chapter</Link>
         </div>
       ))}
       </div>

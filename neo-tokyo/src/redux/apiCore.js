@@ -18,7 +18,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
             getSearch: builder.query({ query: (searchTerm, page = 1) => `/search?keyword=${searchTerm}&page=${page}`}),
             getListGenre: builder.query( { query: (getGenre)=> `/browse?state=all&category=${getGenre}&page=1`}),
             getDetails: builder.query( { query: (id) => `/details?id=${id}` }),
-            getChapter: builder.query( { query: (chapterId )=> `/chapter?id=${chapterId}`})
+            getChapter: builder.query( { query: (chapterinfo) => `/chapter?id=${chapterinfo}`})
         }),
     });
     

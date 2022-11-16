@@ -419,3 +419,10 @@ select {
   border-radius: 4%;
   cursor: pointer;
 }
+
+.chapter-page{
+  background-color: black;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}

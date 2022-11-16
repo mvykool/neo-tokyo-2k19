@@ -4,16 +4,17 @@ import { useGetChapterQuery} from '../redux/apiCore'
 
 const Chapter = () => {
 
-    const { chapterId } = useParams();
-    const { data, isFetching, error } = useGetChapterQuery( chapterId );
+    const { chapterinfo } = useParams();
+    const { data, isFetching, error } = useGetChapterQuery( chapterinfo );
 
-    console.log(data)
+    console.log(data?.data)
 
   return (
-    <div>
-        <h1 className='details'>chapter</h1>
-    </div>
+  <div>
+    chapter
+  </div>
   )
+  
 }
 
 export default Chapter
