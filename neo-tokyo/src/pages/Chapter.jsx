@@ -2,10 +2,9 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useGetChapterQuery} from '../redux/apiCore'
 
-const Chapter = () => {
+const Chapter = ({id}) => {
 
-    const { chapterinfo } = useParams();
-    const { data, isFetching, error } = useGetChapterQuery( chapterinfo );
+    const { data, isFetching, error } = useGetChapterQuery( id );
 
     console.log(data?.data)
 

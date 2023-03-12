@@ -7,7 +7,6 @@ const Search = () => {
 
   const handleSubmit = (e) => {
 	 e.preventDefault();
-  setSearchTerm(" ")
 
 
 	 navigate(`/search/${searchTerm}`);

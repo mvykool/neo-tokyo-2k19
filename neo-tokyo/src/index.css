@@ -420,9 +420,12 @@ select {
   cursor: pointer;
 }
 
-.chapter-page{
+.chapter{
   background-color: black;
+  z-index: 500;
   position: absolute;
-  height: 100vh;
-  width: 100vw;
+  margin-left:-10%;
+  overflow-x: hidden;
+  height: 100%;
+  width: auto;
 }

@@ -22,7 +22,7 @@ function App() {
         <Route path="/latest" element={<LatestPage/>}/>
         <Route path="/search/:searchTerm" element={<SearchPage/>}/>
         <Route path="/details/:id" element={<Details/>}/>
-        <Route path="/chapter" element={<Chapter/>}/>
+        <Route path="/chapter/:id" element={<Chapter/>}/>
         
        </Routes>
     </div>

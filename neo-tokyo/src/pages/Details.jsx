@@ -1,6 +1,6 @@
 import React,{ useState} from 'react'
 import { useParams } from 'react-router-dom'
-import { useGetDetailsQuery } from '../redux/apiCore'
+import { useGetDetailsQuery, useGetChapterQuery } from '../redux/apiCore'
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
@@ -11,6 +11,17 @@ const Details = () => {
 
     const { id } = useParams();
     const { data, isFetching, error } = useGetDetailsQuery( id );
+
+
+    const [isShown, setIsShown] = useState(false);
+
+    const handleClick = (e) => {
+      // 👇️ toggle shown state
+      setIsShown(current => !current);
+      let id = 1
+      // 👇️ or simply set it to true
+      // setIsShown(true);
+    };
 
 
   console.log(data?.data)
@@ -38,13 +49,40 @@ const Details = () => {
 
       <div className='chapter-container'>
       {data?.data.chapters.map((chapter)=> (
-        <div className='chapter-card' key={chapter.id}>
+        <div className='chapter-card' key={chapter.id} onClick={(e) => handleClick(e.chapter.id)}>
             <p className='details-chapter'>{chapter.title}</p>
             <p className='chapter-date'>Posted: {chapter.uploaded_at}</p>
-          <Link to={chapter.url} >Read chapter</Link>
+          
+
+          {/* 👇️ show elements on click */}
+           {isShown && (
+            <div>
+             
+              </div>
+             )}
+
+         {/* 👇️ show component on click */}
+          {isShown && <Chapters id={chapter.id}/>}
+
+
+
         </div>
       ))}
       </div>
+    </div>
+  )
+}
+
+
+function Chapters({id}){
+
+
+
+ console.log(data)
+
+  return (
+    <div className='chapter'>
+
     </div>
   )
 }
