@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
       const html = response.data
       const $ = cheerio.load(html)
 
-      $('div:contains("panel")',html).each(function () {
+      $('<div id="RecentChaptersContainer"></div>',html).each(function () {
       const title = $(this).text()
       mangaList.push({
         title
