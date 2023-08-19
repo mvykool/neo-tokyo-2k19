@@ -13,8 +13,8 @@ export class HomeComponent implements OnInit {
 
       ngOnInit(){
         this.http.get('assets/db.json').subscribe((response: any) => {
-          console.log(response)
-          this.jsonData = response;
+          this.jsonData = response.data.slice(0,50);
+          console.log(this.jsonData);
         });
       }
 }
