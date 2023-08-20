@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
 
       ngOnInit() {
         this.http.get<any>('assets/db.json').subscribe((response: any) => {
-          this.jsonData = response.data.slice(0, 50);
+          this.jsonData = response.data.slice(0, 30);
           this.titles = this.jsonData.map((item: { title: any; }) => item.title); 
           console.log(this.jsonData);
         });
