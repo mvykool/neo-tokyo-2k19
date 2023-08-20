@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class HomeComponent implements OnInit {
       jsonData: any = [];
       titles: string = "";
+      thumbnail: string = "";
 
       constructor(private http: HttpClient) { }
 
