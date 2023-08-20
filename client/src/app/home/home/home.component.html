@@ -2,9 +2,12 @@
 
 <h1>Neo tokyo-2k19</h1>
 
-<div *ngIf="titles.length > 0 || thumbnail.length > 0">
+<div *ngIf="titles.length > 0">
     <h2>Titles:</h2>
     <p *ngFor="let title of titles">{{ title }}</p>
+</div>
 
-    <img src={thumbnail} alt="thumbnail">
+<div *ngIf="thumbnail.length > 0">
+    <h2>thumbnail:</h2>
+    <img src="{{thumbnail}}" alt="thumbnail">
 </div>
