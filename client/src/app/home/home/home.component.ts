@@ -7,18 +7,19 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-      jsonData: any = [];
-      titles: string = "";
-      thumbnail: string = "";
+  jsonData: any = [];
+  titleAndThumbnailData: { title: string, thumbnail: string }[] = [];
 
-      constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-      ngOnInit() {
-        this.http.get('assets/db.json').subscribe((response: any) => {
-          this.jsonData = response.data.slice(0, 30);
-          this.titles = this.jsonData.map((item: { title: string; }) => item.title); 
-          this.thumbnail = this.jsonData.map((item: { thumbnail: string; }) => item.thumbnail); 
-          console.log(this.jsonData);
-        });
-      }
+  ngOnInit() {
+    this.http.get('assets/db.json').subscribe((response: any) => {
+      this.jsonData = response.data.slice(0, 30);
+      this.titleAndThumbnailData = this.jsonData.map((item: any) => ({
+        title: item.title,
+        thumbnail: item.thumbnail
+      }));
+      console.log(this.jsonData);
+    });
+  }
 }
