@@ -8,14 +8,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
       jsonData: any = [];
-      titles: string | undefined;
+      titles: any;
 
       constructor(private http: HttpClient) { }
 
       ngOnInit() {
         this.http.get<any>('assets/db.json').subscribe((response: any) => {
           this.jsonData = response.data.slice(0, 30);
-          this.titles = this.jsonData.map((item: { title: string; }) => item.title); 
+          this.titles = this.jsonData.map((item: { title: any; }) => item.title); 
           console.log(this.jsonData);
         });
       }
