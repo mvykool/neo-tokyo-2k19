@@ -1,1 +1,7 @@
 <p>home works!</p>
+
+<div *ngIf="jsonData">
+    <div *ngFor="let item of jsonData">
+        <pre>{{ item | json }}</pre>
+    </div>
+</div>
