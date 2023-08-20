@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
         this.http.get('assets/db.json').subscribe((response: any) => {
           this.jsonData = response.data.slice(0, 30);
           this.titles = this.jsonData.map((item: { title: string; }) => item.title); 
+          this.thumbnail = this.jsonData.map((item: { thumbnail: string; }) => item.thumbnail); 
           console.log(this.jsonData);
         });
       }
