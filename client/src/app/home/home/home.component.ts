@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
       this.jsonData = response.data.filter((item: any) => {
         const tags = item.tags || []; 
         return tags.includes('shonen') || tags.includes('seinen');
-      }).slice(0, 50);
+      }).slice(0, 20);
 
       this.titleAndThumbnailData = this.jsonData.map((item: any) => ({
         title: item.title,
