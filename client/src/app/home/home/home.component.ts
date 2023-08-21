@@ -14,12 +14,17 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.http.get('assets/db.json').subscribe((response: any) => {
-      this.jsonData = response.data.slice(0, 30);
+      this.jsonData = response.data.filter((item: any) => {
+        const tags = item.tags || []; 
+        return tags.includes('shonen') || tags.includes('seinen');
+      }).slice(0, 50);
+
       this.titleAndThumbnailData = this.jsonData.map((item: any) => ({
         title: item.title,
-        thumbnail: item.thumbnail
+        thumbnail: item.picture
       }));
-      console.log(this.jsonData);
+      
+      console.log(this.jsonData); 
     });
   }
 }
