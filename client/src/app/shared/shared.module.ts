@@ -9,6 +9,6 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
   imports: [
     CommonModule
   ],
-  exports: [NavbarComponent, FooterComponent]
+  exports: [NavbarComponent, FooterComponent, SidebarComponent]
 })
 export class SharedModule { }
