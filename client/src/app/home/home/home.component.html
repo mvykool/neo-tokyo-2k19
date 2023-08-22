@@ -1,9 +1,12 @@
 <h1>Neo tokyo-2k19</h1>
 
 <div *ngIf="titleAndThumbnailData.length > 0">
-    <h2>Titles and Thumbnails:</h2>
+
+    <h2>Titles and Thumbnails</h2>
+
     <div *ngFor="let data of titleAndThumbnailData; let i = index">
         <p>{{ data.title }}</p>
         <img src="{{ data.thumbnail }}" alt="thumbnail {{ i }}" (error)="handleImageError(data)" />
     </div>
+
 </div>
