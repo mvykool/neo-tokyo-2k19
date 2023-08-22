@@ -30,7 +30,6 @@ export class HomeComponent implements OnInit {
   }
 
   handleImageError(item: any) {
-    // Called when an image fails to load, replace with the default image
     item.thumbnail = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png";
   }
 }
