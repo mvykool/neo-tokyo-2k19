@@ -26,3 +26,20 @@ aside {
     border-radius: 50%;
     object-fit: cover;
 }
+
+.sub-title {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sub-title h2 {
+    color: white;
+}
+
+.sub-title span {
+    color: var(--main-text);
+    font-size: .8rem;
+    border-bottom: 1px solid var(--main-text);
+}
