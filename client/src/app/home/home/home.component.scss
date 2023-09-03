@@ -57,8 +57,22 @@ main {
     height: 100%;
     width: 100%;
     display: flex;
+    gap: .5rem;
+    color: var(--main-text);
+    padding: 2rem;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.4);
+}
+
+.layer h2,
+h4,
+span {
+    color: white;
+    font-weight: 600;
+}
+
+.layer p {
+    font-size: .8rem;
 }
 
 .img-container {
@@ -71,4 +85,34 @@ img {
     width: 165px;
     height: 200px;
     border-radius: .2rem;
+}
+
+.btn-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-main {
+    padding: .2rem 2rem;
+    border-radius: .2rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color: var(--sidebar-bg);
+}
+
+.btn-alt {
+    padding: .2rem 2rem;
+    background-color: transparent;
+    border-radius: .2rem;
+    border: 1px solid var(--text-highlighted);
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color: var(--text-highlighted);
+}
+
+i {
+    font-size: 1rem;
 }
