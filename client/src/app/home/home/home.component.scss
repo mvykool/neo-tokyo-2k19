@@ -53,6 +53,14 @@ main {
     width: 62%;
 }
 
+.layer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
 .img-container {
     padding: 1rem 0;
     display: flex;
