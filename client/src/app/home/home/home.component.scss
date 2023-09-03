@@ -33,10 +33,14 @@ main {
 }
 
 .main-bg {
-    background-color: red;
-    margin: 1rem 0;
-    height: 200px;
-    width: 200px;
+    background-image: url("/assets/images/main-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    object-fit: scale-down;
+    background-repeat: no-repeat;
+    margin: 3rem 0 1rem;
+    height: 44vh;
+    width: 62%;
 }
 
 img {
