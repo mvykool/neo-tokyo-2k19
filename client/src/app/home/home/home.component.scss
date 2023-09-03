@@ -43,6 +43,14 @@ main {
     width: 62%;
 }
 
+.img-container {
+    padding: 1rem 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
 img {
-    width: 250px;
+    width: 165px;
+    height: 200px;
+    border-radius: .2rem;
 }

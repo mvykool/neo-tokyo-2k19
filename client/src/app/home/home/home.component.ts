@@ -9,7 +9,9 @@ import { HttpClient } from '@angular/common/http';
 export class HomeComponent implements OnInit {
   defaultImage: string = "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg";
   jsonData: any = [];
+  jsonDataSecond: any = [];
   titleAndThumbnailData: { title: string, thumbnail: string }[] = [];
+  topAiring: { thumbnail: string}[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -20,8 +22,17 @@ export class HomeComponent implements OnInit {
         return tags.includes('action') || tags.includes('adventure');
       }).slice(0, 4);
 
+      this.jsonDataSecond = response.data.filter((item: any) => {
+        const tags = item.tags || []; 
+        return tags.includes('action') || tags.includes('adventure');
+      }).slice(20, 24);
+
       this.titleAndThumbnailData = this.jsonData.map((item: any) => ({
         title: item.title,
+        thumbnail: item.picture
+      }));
+
+      this.topAiring = this.jsonDataSecond.map((item: any) => ({
         thumbnail: item.picture
       }));
     });

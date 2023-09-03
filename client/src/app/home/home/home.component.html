@@ -21,8 +21,20 @@
     <div *ngIf="titleAndThumbnailData.length > 0">
         <h2>Top Tv shows</h2>
 
-        <div *ngFor="let data of titleAndThumbnailData; let i = index">
-            <img src="{{ data.thumbnail }}" alt="thumbnail {{ i }}" (error)="handleImageError(data)" />
+        <div class="img-container">
+            <div *ngFor="let data of titleAndThumbnailData; let i = index">
+                <img src="{{ data.thumbnail }}" alt="thumbnail {{ i }}" (error)="handleImageError(data)" />
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="topAiring.length > 0">
+        <h2>Top Airing</h2>
+
+        <div class="img-container">
+            <div *ngFor="let data of topAiring; let i = index">
+                <img src="{{ data.thumbnail }}" alt="thumbnail {{ i }}" (error)="handleImageError(data)" />
+            </div>
         </div>
     </div>
 
