@@ -4,12 +4,12 @@ main {
 
 .top {
     padding: 1rem 0 0;
-    gap: 18rem;
+    gap: 16rem;
     display: flex;
 }
 
 .search-input {
-    padding: .3rem .4rem;
+    padding: .4rem .5rem;
     background-color: var(--sidebar-bg);
     display: flex;
     align-items: center;
@@ -30,6 +30,16 @@ main {
 .navbar {
     display: flex;
     gap: 2rem;
+}
+
+.navbar p {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.highlighted {
+    color: var(--text-highlighted);
+    border-bottom: .15rem solid var(--text-highlighted);
 }
 
 .main-bg {
