@@ -43,3 +43,63 @@ aside {
     font-size: .8rem;
     border-bottom: 1px solid var(--main-text);
 }
+
+.genre-container {
+    margin-top: 1.5rem;
+    gap: 1rem;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.genre1 {
+    background-image: url("https://assets3.thrillist.com/v1/image/2847634/853x568/flatten;crop;webp=auto;jpeg_quality=60.jpg");
+    background-size: cover;
+    width: 155px;
+    height: 80px;
+    border-radius: .2rem;
+    position: relative;
+}
+
+.genre2 {
+    background-image: url("https://i0.wp.com/animegalaxyofficial.com/wp-content/uploads/2022/09/another-featured-edited-1.jpg?resize=750%2C422&ssl=1");
+    background-size: cover;
+    width: 155px;
+    height: 80px;
+    border-radius: .2rem;
+    position: relative;
+}
+
+.genre3 {
+    background-image: url("https://imgix.ranker.com/list_img_v2/7470/1927470/original/1927470-u2?auto=format&q=50&fit=crop&fm=pjpg&dpr=2&crop=faces&h=185.86387434554973&w=355");
+    background-size: cover;
+    width: 155px;
+    height: 80px;
+    border-radius: .2rem;
+    position: relative;
+}
+
+.genre4 {
+    background-image: url("https://static.fandomspot.com/images/07/7601/24-barakamon-anime-screenshot.jpg");
+    background-size: cover;
+    width: 155px;
+    height: 80px;
+    border-radius: .2rem;
+    position: relative;
+}
+
+.layer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: .2rem;
+}
+
+.layer p {
+    color: white;
+    font-weight: 600;
+}
