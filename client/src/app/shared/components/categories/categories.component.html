@@ -33,4 +33,28 @@
         </div>
     </div>
 
+    <div class="sub-title">
+        <h2>Continue Watching</h2>
+        <span>More <i class="bx bx-plus"></i></span>
+    </div>
+
+    <div *ngIf="animeData.length > 0">
+        <div class="img-container">
+            <div *ngFor="let data of animeData; let i = index">
+                <img src="{{ data.thumbnail }}" alt="thumbnail {{ i }}" (error)="handleImageError(data)" />
+            </div>
+        </div>
+    </div>
+
+    <div class="sub-title">
+        <h2>Trailers</h2>
+        <span>More <i class="bx bx-plus"></i></span>
+    </div>
+
+    <div class="trailer">
+        <div class="layer">
+            <i class="bx bx-play-circle"></i>
+        </div>
+    </div>
+
 </aside>
