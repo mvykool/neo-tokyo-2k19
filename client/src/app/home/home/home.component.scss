@@ -8,7 +8,7 @@ main {
     display: flex;
 }
 
-.top input {
+.search-input {
     padding: .3rem .4rem;
     outline: none;
     border: none;
@@ -16,7 +16,7 @@ main {
     border-radius: .2rem;
 }
 
-.top input::placeholder {
+.search-input::placeholder {
     color: var(--text);
 }
 
