@@ -16,6 +16,10 @@ main {
     border-radius: .2rem;
 }
 
+.top input::placeholder {
+    color: var(--text);
+}
+
 .navbar {
     display: flex;
     gap: 2rem;
