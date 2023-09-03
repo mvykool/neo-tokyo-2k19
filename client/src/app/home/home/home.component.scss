@@ -8,6 +8,12 @@ main {
     display: flex;
 }
 
+.top input {
+    padding: .2rem;
+    outline: none;
+    border: none;
+}
+
 .navbar {
     display: flex;
     gap: 2rem;
