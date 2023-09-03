@@ -4,19 +4,26 @@ main {
 
 .top {
     padding: 1rem 0 0;
-    gap: 20rem;
+    gap: 18rem;
     display: flex;
 }
 
 .search-input {
     padding: .3rem .4rem;
-    outline: none;
-    border: none;
     background-color: var(--sidebar-bg);
+    display: flex;
+    align-items: center;
+    gap: .3rem;
     border-radius: .2rem;
 }
 
-.search-input::placeholder {
+.search-input input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.search-input input::placeholder {
     color: var(--text);
 }
 
