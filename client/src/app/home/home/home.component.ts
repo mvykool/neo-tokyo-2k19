@@ -18,14 +18,12 @@ export class HomeComponent implements OnInit {
       this.jsonData = response.data.filter((item: any) => {
         const tags = item.tags || []; 
         return tags.includes('action') || tags.includes('adventure');
-      }).slice(0, 10);
+      }).slice(0, 4);
 
       this.titleAndThumbnailData = this.jsonData.map((item: any) => ({
         title: item.title,
         thumbnail: item.picture
       }));
-      
-      console.log(this.jsonData); 
     });
   }
 
