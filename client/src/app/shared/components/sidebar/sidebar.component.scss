@@ -9,9 +9,14 @@ aside {
 
 ul {
     list-style: none;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
 }
 
 .icon {
+    font-size: 1.1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
