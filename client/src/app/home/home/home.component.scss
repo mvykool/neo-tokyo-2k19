@@ -9,9 +9,11 @@ main {
 }
 
 .top input {
-    padding: .2rem;
+    padding: .3rem .4rem;
     outline: none;
     border: none;
+    background-color: var(--sidebar-bg);
+    border-radius: .2rem;
 }
 
 .navbar {
