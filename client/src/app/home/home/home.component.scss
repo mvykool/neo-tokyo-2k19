@@ -4,7 +4,13 @@ main {
 
 .top {
     padding: 1rem 0 0;
+    gap: 20rem;
     display: flex;
+}
+
+.navbar {
+    display: flex;
+    gap: 2rem;
 }
 
 img {
